@@ -23,11 +23,11 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("CountryPersistenceUnit");
         EntityManager em = emf.createEntityManager();
 
-// Создание репозитория и сервиса
+// Creating a repository and service
         CountryRepository countryRepository = new CountryRepository(em);
         CountryService countryService = new CountryService(em);
 
-// Создание объектов для сохранения в базу данных
+// Creating objects to save to the database
 
         President president = new President("John Doe", 50);
         President president1 = new President("Jane Smith", 55);
@@ -41,29 +41,29 @@ public class Main {
         Country country4 = new Country("Elysium", 1500000, president3);
         Country country5 = new Country("Fantasia", 2500000, president4);
 
-// Сохранение объектов в базу данных
+// Saving objects to the database
         countryService.saveCountry(country1);
         countryService.saveCountry(country2);
         countryService.saveCountry(country3);
         countryService.saveCountry(country4);
         countryService.saveCountry(country5);
 
-// Получение списка всех стран и вывод информации о них
+// Getting a list of all countries and displaying information about them
         List<Country> countries = countryService.getAllCountries();
         for (Country country : countries) {
             System.out.println("Retrieved Country: " + country);
         }
 
-// Получение страны по имени и вывод информации о ней
+// Getting a country by name and displaying information about it
         Country retrievedCountry = countryService.getCountryByName("Wonderland");
         if (retrievedCountry != null) {
             System.out.println("Retrieved Country: " + retrievedCountry);
         }
 
-// Удаление страны из базы данных
+// Removing a country from the database
         countryService.deleteCountry("Dreamland");
 
-// Закрытие EntityManager и EntityManagerFactory
+// Closing EntityManager and EntityManagerFactory
         em.close();
         emf.close();
 
