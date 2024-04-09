@@ -28,12 +28,19 @@ public class Main {
         CountryService countryService = new CountryService(em);
 
 // Creating objects to save to the database
+//for myself
+     // President president = em.find(President.class,1L);
+     // System.out.println(  president.toString());
+     // president.setName("BOB LOL");
+     // president.setAge(50);
+     // System.out.println("President: " + president.getName() + ", Age: " + president.getAge());
 
-        President president = new President("John Doe", 50);
-        President president1 = new President("Jane Smith", 55);
-        President president2 = new President("Michael Johnson", 48);
-        President president3 = new President("Emily Davis", 52);
-        President president4 = new President("David Wilson", 60);
+
+       President president = new President("Lili Royz", 50);
+       President president1 = new President("Richi Smith", 55);
+       President president2 = new President("Michael Green", 48);
+       President president3 = new President("Petra Vong", 52);
+       President president4 = new President("Billy Robinsoon ", 60);
 
         Country country1 = new Country("Wonderland", 1000000, president);
         Country country2 = new Country("Dreamland", 2000000, president1);
