@@ -1,5 +1,5 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-    <persistence-unit name="database-configuration" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="CountryPersistenceUnit" transaction-type="RESOURCE_LOCAL">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
@@ -9,13 +9,21 @@
 
 
 
+
+
+
+
+
+
+
+
         <properties>
             <!--property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/-->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/message2db"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/country"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
-            <property name="javax.persistence.jdbc.user" value="chef"/>
-            <property name="javax.persistence.jdbc.password" value="P@ssw0rd"/>
+            <property name="javax.persistence.jdbc.user" value="lol"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
 
 
             <property name="hibernate.show_sql" value="true"/>
